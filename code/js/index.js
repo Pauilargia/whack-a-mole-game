@@ -13,8 +13,19 @@ $(document).ready(function(){
       }
     }, 4000);
 
-    var timeoutId = setTimeout(function(){
+    var secondsLeft = 59;
+    var intervalIdTimer = setInterval(function () {
+      console.log("0:"+secondsLeft);
+	    secondsLeft--;
+
+      if (secondsLeft < 0) {
+        clearInterval(intervalIdTimer);
+      }
+    }, 1000);
+
+    var timeoutIdTurn = setTimeout(function(){
       game.finishGame();
+
     }, 60000);
   });
 
