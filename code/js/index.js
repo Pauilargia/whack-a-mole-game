@@ -4,6 +4,16 @@ $(document).ready(function(){
   game = new MoleGame();
   document.getElementById("points").innerHTML = game.score;
 
+  $("#easy").on("click", function(e){
+    game.setDifficulty("easy");
+  });
+  $("#medium").on("click", function(e){
+    game.setDifficulty("medium");
+  });
+  $("#hard").on("click", function(e){
+    game.setDifficulty("hard");
+  });
+
   document.getElementById("start").addEventListener("click", function(){
     var intervalId1 = setInterval (function(){
       if(game.onGoing === true){
