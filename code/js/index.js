@@ -2,13 +2,6 @@ var game;
 
 $(document).ready(function(){
   game = new MoleGame();
-
-  $(".hole").on("click", function(e){
-    if (e.currentTarget.classList[1] === "active"){
-      game.deactivateHolesClicking(e.currentTarget.id);
-    }
-  });
-
   document.getElementById("points").innerHTML = game.score;
 
   $("#easy").on("click", function(e){
@@ -19,6 +12,15 @@ $(document).ready(function(){
   });
   $("#hard").on("click", function(e){
     game.setDifficulty("hard");
+  });
+
+  $(".hole").on("click", function(e){
+    if (e.currentTarget.classList[1] === "active"){
+      game.deactivateHolesClicking(e.currentTarget.id);
+      game.score++;
+      // console.log(game.score);
+      document.getElementById("points").innerHTML = game.score;
+    }
   });
 
   document.getElementById("start").addEventListener("click", function(){
