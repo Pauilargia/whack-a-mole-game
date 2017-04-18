@@ -11,6 +11,36 @@ body{}
   display: inline-block;
   color: #000;
   font-size: 30px;
+  margin-left: 20px;
+}
+
+.level{
+  display: inline-block;
+  position: relative;
+  top: 20px;
+  left: 320px;
+}
+
+.level button{
+  display: block;
+  margin-top: 4px;
+  height: 20px;
+  width: 80px;
+}
+#easy{
+  background-color: #5cd65c;
+}
+#medium{
+  background-color: #ffcc00;
+}
+#hard{
+  background-color: #ff471a;
+}
+
+.score{
+  text-align: center;
+  float: right;
+  margin-right: 50px;
 }
 
 #start{
@@ -20,8 +50,7 @@ body{}
   font-size: 40px;
   background-color: #ff80ff;
   position: relative;
-  left: 250px;
-  top: 10px;
+  left: 240px;
 }
 
 
@@ -36,38 +65,81 @@ body{}
 .hole{
   display: inline-block;
   background-color: #000;
-  width: 170px;
-  height: 50px;
+  width: 100px;
+  height: 40px;
   border-radius: 50%;
-  margin-top: 95px;
+  position: absolute;
 }
 
 .active{
   background-color: #FFF;
 }
 
+#hole13{
+  margin-left: 55px;
+  margin-top: 95px;
+}
 #hole0{
-  margin-left: 110px;
+  margin-left: 210px;
+  margin-top: 95px;
 }
 #hole1{
-  margin-left: 110px;
-
+  margin-left: 365px;
+  margin-top: 95px;
 }
 #hole2{
-  margin-left: 110px;
+  margin-left: 520px;
+  margin-top: 95px;
 }
 #hole3{
-  margin-left: 230px;
+  margin-left: 675px;
+  margin-top: 95px;
+}
+#hole14{
+  margin-left: 830px;
+  margin-top: 95px;
+}
+#hole11{
+  margin-left: 120px;
+  margin-top: 230px;
 }
 #hole4{
-  margin-left: 170px;
+  margin-left: 275px;
+  margin-top: 230px;
 }
 #hole5{
-  margin-left: 110px;
+  margin-left: 430px;
+  margin-top: 230px;
 }
 #hole6{
-  margin-left: 110px;
+  margin-left: 585px;
+  margin-top: 230px;
+}
+#hole12{
+  margin-left: 740px;
+  margin-top: 230px;
+}
+#hole15{
+  margin-left: 55px;
+  margin-top: 365px;
 }
 #hole7{
-  margin-left: 110px;
+  margin-left: 210px;
+  margin-top: 365px;
+}
+#hole8{
+  margin-left: 365px;
+  margin-top: 365px;
+}
+#hole9{
+  margin-left: 520px;
+  margin-top: 365px;
+}
+#hole10{
+  margin-left: 675px;
+  margin-top: 365px;
+}
+#hole16{
+  margin-left: 830px;
+  margin-top: 365px;
 }

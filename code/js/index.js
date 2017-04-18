@@ -2,12 +2,14 @@ var game;
 
 $(document).ready(function(){
   game = new MoleGame();
+  document.getElementById("points").innerHTML = game.score;
 
   document.getElementById("start").addEventListener("click", function(){
     var intervalId1 = setInterval (function(){
       if(game.onGoing === true){
         game.activateHoles();
         game.deactivateHolesClicking();
+
       } else {
         clearInterval(intervalId1);
       }
@@ -23,24 +25,6 @@ $(document).ready(function(){
       }
     }, 1000);
 
-
-//     function countdown() {
-//     var seconds = 60;
-//     function tick() {
-//         var counter = document.getElementById("counter");
-//         seconds--;
-//         counter.innerHTML = "0:" + (seconds < 10 ? "0" : "") + String(seconds);
-//         if( seconds > 0 ) {
-//             setTimeout(tick, 1000);
-//         } else {
-//             alert("Game over");
-//         }
-//     }
-//     tick();
-// }
-//
-// // start the countdown
-// countdown();
 
 
     var timeoutIdTurn = setTimeout(function(){

@@ -1,8 +1,11 @@
 function MoleGame(){
   this.board = 0;
-  this.holes = ["hole0", "hole1", "hole2", "hole3", "hole4", "hole5", "hole6", "hole7"];
+  this.holes = ["hole0", "hole1", "hole2", "hole3", "hole4", "hole5", "hole6", "hole7", "hole8", "hole9", "hole10"];
+  //"hole11", "hole12", "hole13", "hole14", "hole15", "hole16",];
   this.moles = 0;
   this.onGoing = true;
+  this.level = "easy"
+  this.score = 0;
 
   this._setHoles();
 }
