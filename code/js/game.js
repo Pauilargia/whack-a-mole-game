@@ -49,7 +49,7 @@ MoleGame.prototype.setDifficulty = function(level){
     this.intervalTime = 2000;
     break;
   }
-};2000
+};
 
 MoleGame.prototype.activateHoles = function(){
   var that = this;
@@ -69,10 +69,8 @@ MoleGame.prototype.activateHoles = function(){
   }, this.intervalTime/2);
 };
 
-MoleGame.prototype.deactivateHolesClicking = function(){
-  $(".active").on("click", function(e){
-    $(e.currentTarget).removeClass("active");
-  });
+MoleGame.prototype.deactivateHolesClicking = function(holeId){
+  $("#"+holeId).removeClass("active");
 };
 
 MoleGame.prototype.deactivateHolesTimer = function(){

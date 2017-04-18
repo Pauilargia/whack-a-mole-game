@@ -2,6 +2,13 @@ var game;
 
 $(document).ready(function(){
   game = new MoleGame();
+
+  $(".hole").on("click", function(e){
+    if (e.currentTarget.classList[1] === "active"){
+      game.deactivateHolesClicking(e.currentTarget.id);
+    }
+  });
+
   document.getElementById("points").innerHTML = game.score;
 
   $("#easy").on("click", function(e){
@@ -18,8 +25,6 @@ $(document).ready(function(){
     var intervalId1 = setInterval (function(){
       if(game.onGoing === true){
         game.activateHoles();
-        game.deactivateHolesClicking();
-
       } else {
         clearInterval(intervalId1);
       }
