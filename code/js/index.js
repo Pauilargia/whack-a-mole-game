@@ -23,7 +23,7 @@ $(document).ready(function(){
       } else {
         clearInterval(intervalId1);
       }
-    }, 4000);
+    }, game.intervalTime);
 
     var secondsLeft = 59;
     var intervalIdTimer = setInterval(function () {
