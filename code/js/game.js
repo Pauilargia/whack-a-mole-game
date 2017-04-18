@@ -2,7 +2,7 @@ function MoleGame(){
   this.board = 0;
   this.holes = ["hole0", "hole1", "hole2", "hole3", "hole4", "hole5", "hole6", "hole7", "hole8", "hole9", "hole10"];
   this.moles = 0;
-  this.onGoing = true;
+  this.onGoing = false;
   this.level = "easy";
   this.score = 0;
   this.intervalTime = 4000;
