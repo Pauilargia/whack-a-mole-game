@@ -1,26 +1,33 @@
 var game;
 
+function clicking(){
+  $(".hole").on("click", function(e){
+    console.log("click");
+    if (e.currentTarget.classList[1] === "active"){
+      game.deactivateHolesClicking(e.currentTarget.id);
+      game.score++;
+      document.getElementById("points").innerHTML = game.score;
+    }
+  });
+}
+
 $(document).ready(function(){
   game = new MoleGame();
   document.getElementById("points").innerHTML = game.score;
 
+  clicking();
+
   $("#easy").on("click", function(e){
     game.setDifficulty("easy");
+    clicking();
   });
   $("#medium").on("click", function(e){
     game.setDifficulty("medium");
+    clicking();
   });
   $("#hard").on("click", function(e){
     game.setDifficulty("hard");
-  });
-
-  $(".hole").on("click", function(e){
-    if (e.currentTarget.classList[1] === "active"){
-      game.deactivateHolesClicking(e.currentTarget.id);
-      game.score++;
-      // console.log(game.score);
-      document.getElementById("points").innerHTML = game.score;
-    }
+    clicking();
   });
 
   document.getElementById("start").addEventListener("click", function(){
