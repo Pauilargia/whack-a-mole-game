@@ -1,7 +1,7 @@
 function MoleGame(){
   this.board = 0;
   this.holes = ["hole0", "hole1", "hole2", "hole3", "hole4", "hole5", "hole6", "hole7", "hole8", "hole9", "hole10"];
-  this.moles = 0;
+  this.images = ["dugtrio", "hans", "minion1", "minion2", "minion3", "topo1", "topo2", "topo3"];
   this.onGoing = false;
   this.level = "easy";
   this.score = 0;
@@ -29,6 +29,10 @@ MoleGame.prototype._chooseHoles = function(array, number){
     secondAuxArray.push(array.splice(index, 1)[0]);
   }
   return secondAuxArray;
+};
+
+MoleGame.prototype._getRandomImage = function(){
+  return this.images[Math.floor(Math.random()*this.images.length)];
 };
 
 MoleGame.prototype.setDifficulty = function(level){
@@ -61,6 +65,7 @@ MoleGame.prototype.activateHoles = function(){
   auxArray = this._chooseHoles(auxArray, howManyHoles);
   auxArray.forEach(function(e){
     $("#"+e).addClass("active");
+    $("#"+e).css("background-image", "url(\"./images/"+that._getRandomImage()+".png\")");
   });
   auxArray = [];
   var intervalId2 = setInterval(function(){
@@ -70,10 +75,13 @@ MoleGame.prototype.activateHoles = function(){
 };
 
 MoleGame.prototype.deactivateHolesClicking = function(holeId){
+  $("#"+holeId).css("background-image", "none");
   $("#"+holeId).removeClass("active");
+  this.onGoing=false;
 };
 
 MoleGame.prototype.deactivateHolesTimer = function(){
+  $(".active").css("background-image", "none");
   $(".active").removeClass("active");
 };
 
