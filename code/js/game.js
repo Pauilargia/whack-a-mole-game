@@ -77,7 +77,6 @@ MoleGame.prototype.activateHoles = function(){
 MoleGame.prototype.deactivateHolesClicking = function(holeId){
   $("#"+holeId).css("background-image", "none");
   $("#"+holeId).removeClass("active");
-  this.onGoing=false;
 };
 
 MoleGame.prototype.deactivateHolesTimer = function(){

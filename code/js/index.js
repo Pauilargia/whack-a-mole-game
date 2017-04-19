@@ -2,10 +2,21 @@ var game;
 
 function clicking(){
   $(".hole").on("click", function(e){
-    console.log("click");
     if (e.currentTarget.classList[1] === "active"){
+      if($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/minion2.png\");"){
+        game.score+=10;
+      } else if(($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/minion1.png\");")||($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/minion3.png\");")){
+        game.score+=5;
+      } else if(($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/topo1.png\");")||($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/topo2.png\");")||($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/topo3.png\");")){
+        game.score++;
+      } else if($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/dugtrio.png\");"){
+        game.score--;
+      } else{
+        game.score = 0;
+      }
+
       game.deactivateHolesClicking(e.currentTarget.id);
-      game.score++;
+
       document.getElementById("points").innerHTML = game.score;
     }
   });
