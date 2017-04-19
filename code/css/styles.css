@@ -53,6 +53,13 @@ body{}
   left: 240px;
 }
 
+#game-over{
+  width: 360px;
+  font-size: 1.8em;
+  position: relative;
+  left: 355px;
+  display: none;
+}
 
 #field{
   width: inherit;

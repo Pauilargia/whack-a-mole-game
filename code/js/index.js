@@ -3,17 +3,6 @@ var game;
 function clicking(){
   $(".hole").on("click", function(e){
     if (e.currentTarget.classList[1] === "active"){
-      // if($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/minion2.png\");"){
-      //   game.score+=10;
-      // } else if(($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/minion1.png\");")||($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/minion3.png\");")){
-      //   game.score+=5;
-      // } else if(($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/topo1.png\");")||($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/topo2.png\");")||($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/topo3.png\");")){
-      //   game.score++;
-      // } else if($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/dugtrio.png\");"){
-      //   game.score--;
-      // } else{
-      //   game.score = 0;
-      // }
       switch ($("#"+e.currentTarget.id).attr("style")) {
         case "background-image: url(\"./images/minion2.png\");":
           game.score+=10;
@@ -28,6 +17,8 @@ function clicking(){
           break;
         case "background-image: url(\"./images/hans.png\");":
           game.score=0;
+          showGameOver();
+          game.finishGame();
           break;
         default:
           game.score++;
@@ -38,6 +29,10 @@ function clicking(){
       document.getElementById("points").innerHTML = game.score;
     }
   });
+}
+
+function showGameOver(){
+  $("#game-over").show();
 }
 
 $(document).ready(function(){
@@ -67,6 +62,7 @@ $(document).ready(function(){
 
   document.getElementById("start").addEventListener("click", function(){
     if(game.onGoing===false){
+      $("#game-over").hide();
       game.onGoing = true;
       game.score = 0;
       document.getElementById("points").innerHTML = game.score;
