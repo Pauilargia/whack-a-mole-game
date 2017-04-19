@@ -3,16 +3,34 @@ var game;
 function clicking(){
   $(".hole").on("click", function(e){
     if (e.currentTarget.classList[1] === "active"){
-      if($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/minion2.png\");"){
-        game.score+=10;
-      } else if(($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/minion1.png\");")||($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/minion3.png\");")){
-        game.score+=5;
-      } else if(($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/topo1.png\");")||($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/topo2.png\");")||($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/topo3.png\");")){
-        game.score++;
-      } else if($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/dugtrio.png\");"){
-        game.score--;
-      } else{
-        game.score = 0;
+      // if($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/minion2.png\");"){
+      //   game.score+=10;
+      // } else if(($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/minion1.png\");")||($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/minion3.png\");")){
+      //   game.score+=5;
+      // } else if(($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/topo1.png\");")||($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/topo2.png\");")||($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/topo3.png\");")){
+      //   game.score++;
+      // } else if($("#"+e.currentTarget.id).attr("style")==="background-image: url(\"./images/dugtrio.png\");"){
+      //   game.score--;
+      // } else{
+      //   game.score = 0;
+      // }
+      switch ($("#"+e.currentTarget.id).attr("style")) {
+        case "background-image: url(\"./images/minion2.png\");":
+          game.score+=10;
+          break;
+        case "background-image: url(\"./images/minion1.png\");":
+        case "background-image: url(\"./images/minion3.png\");":
+        case "background-image: url(\"./images/minion4.png\");":
+          game.score+=5;
+          break;
+        case "background-image: url(\"./images/dugtrio.png\");":
+          game.score--;
+          break;
+        case "background-image: url(\"./images/hans.png\");":
+          game.score=0;
+          break;
+        default:
+          game.score++;
       }
 
       game.deactivateHolesClicking(e.currentTarget.id);

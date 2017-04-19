@@ -1,7 +1,7 @@
 function MoleGame(){
   this.board = 0;
   this.holes = ["hole0", "hole1", "hole2", "hole3", "hole4", "hole5", "hole6", "hole7", "hole8", "hole9", "hole10"];
-  this.images = ["dugtrio", "hans", "minion1", "minion2", "minion3", "topo1", "topo2", "topo3"];
+  this.images = ["dugtrio", "hans", "minion1", "minion2", "minion3", "minion4", "topo1", "topo2", "topo3", "topo4", "topo5", "topo6"];
   this.onGoing = false;
   this.level = "easy";
   this.score = 0;
