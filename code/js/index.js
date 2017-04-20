@@ -77,7 +77,10 @@ $(document).ready(function(){
         document.getElementById("timer").innerHTML = "0:" + (secondsLeft < 10 ? "0" : "") + secondsLeft;
   	    secondsLeft--;
 
-        if(secondsLeft===30){ $("#end-of-game").addClass("nyan");}
+        if(secondsLeft===30){
+          $("#end-of-game").addClass("nyan");
+          document.getElementsByTagName("audio")[0].play();
+        }
         else if(secondsLeft===25){ $("#end-of-game").removeClass("nyan");}
 
         else if ((secondsLeft < 0)||(game.onGoing===false)) {

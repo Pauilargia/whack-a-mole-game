@@ -22,4 +22,4 @@ Characters:
   - Hans Topo: Subtracts all the points from the score and the game is over.
 
 
-The goal of the game is to get als many points as possible in one single minute.
+The goal of the game is to get as many points as possible in one single minute.
