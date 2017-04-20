@@ -64,6 +64,7 @@ MoleGame.prototype.activateHoles = function(){
   });
   auxArray = this._chooseHoles(auxArray, howManyHoles);
   auxArray.forEach(function(e){
+    $("#"+e).removeClass("inactive");
     $("#"+e).addClass("active");
     $("#"+e).css("background-image", "url(\"./images/"+that._getRandomImage()+".png\")");
   });
@@ -75,13 +76,16 @@ MoleGame.prototype.activateHoles = function(){
 };
 
 MoleGame.prototype.deactivateHolesClicking = function(holeId){
-  $("#"+holeId).css("background-image", "none");
+  //$("#"+holeId).css("background-image", "none");
   $("#"+holeId).removeClass("active");
+  $("#"+holeId).addClass("inactive");
 };
 
 MoleGame.prototype.deactivateHolesTimer = function(){
-  $(".active").css("background-image", "none");
+  //$(".active").css("background-image", "none");
+  $(".active").addClass("inactive");
   $(".active").removeClass("active");
+
 };
 
 MoleGame.prototype.finishGame = function(){
