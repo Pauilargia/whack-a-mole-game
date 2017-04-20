@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <title>Whack a Mole!</title>
+</head>
+<body>
+  <audio id=“kitty” src="sounds/nyancat.mp3" type="audio/wav" preload="auto"></audio>
+  <div id="game-board">
+    <p class="text">Time: <span id="timer">1:00</span></p>
+    <button type="button" id="start">Start</button>
+    <div class="level">
+      <button type="button" id="easy">Easy</button>
+      <button type="button" id="medium">Medium</button>
+      <button type="button" id="hard">Hard</button>
+    </div>
+    <div class="text score">
+      <p>Score</p>
+      <p id="points"></p>
+    </div>
+    <div id="end-of-game"></div>
+    <div id="game-over"><h1>Game Over</h1></div>
+    <div id="field"></div>
+  </div>
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+  <script type="text/javascript" src="js/game.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+
+</body>
+</html>
