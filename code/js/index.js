@@ -23,9 +23,7 @@ function clicking(){
         default:
           game.score++;
       }
-
       game.deactivateHolesClicking(e.currentTarget.id);
-
       document.getElementById("points").innerHTML = game.score;
     }
   });
@@ -79,13 +77,17 @@ $(document).ready(function(){
         document.getElementById("timer").innerHTML = "0:" + (secondsLeft < 10 ? "0" : "") + secondsLeft;
   	    secondsLeft--;
 
-        if ((secondsLeft < 0)||(game.onGoing===false)) {
+        if(secondsLeft===30){ $("#end-of-game").addClass("nyan");}
+        else if(secondsLeft===25){ $("#end-of-game").removeClass("nyan");}
+
+        else if ((secondsLeft < 0)||(game.onGoing===false)) {
           clearInterval(intervalIdTimer);
         }
       }, 1000);
 
       var timeoutIdTurn = setTimeout(function(){
         game.finishGame();
+
         clearTimeout(timeoutIdTurn);
       }, 60000);
     }
