@@ -17,8 +17,10 @@ function clicking(){
           break;
         case "background-image: url(\"./images/hans.png\");":
           game.score=0;
-          showGameOver();
           game.finishGame();
+          showGameOver();
+          document.getElementsByTagName("audio")[1].pause();
+          document.getElementsByTagName("audio")[1].currentTime=0;
           break;
         default:
           game.score++;
@@ -60,6 +62,7 @@ $(document).ready(function(){
 
   document.getElementById("start").addEventListener("click", function(){
     if(game.onGoing===false){
+      document.getElementsByTagName("audio")[1].play();
       $("#game-over").hide();
       game.onGoing = true;
       game.score = 0;
@@ -78,10 +81,10 @@ $(document).ready(function(){
   	    secondsLeft--;
 
         if((secondsLeft===43)||(secondsLeft===22)){
-          $("#end-of-game").addClass("nyan");
+          $("#surprise").addClass("nyan");
           document.getElementsByTagName("audio")[0].play();
         }
-        else if((secondsLeft===38)||(secondsLeft===17)){ $("#end-of-game").removeClass("nyan");}
+        else if((secondsLeft===38)||(secondsLeft===17)){ $("#surprise").removeClass("nyan");}
 
         else if ((secondsLeft < 0)||(game.onGoing===false)) {
           clearInterval(intervalIdTimer);
@@ -90,7 +93,8 @@ $(document).ready(function(){
 
       var timeoutIdTurn = setTimeout(function(){
         game.finishGame();
-
+        document.getElementsByTagName("audio")[1].pause();
+        document.getElementsByTagName("audio")[1].currentTime=0;
         clearTimeout(timeoutIdTurn);
       }, 60000);
     }
